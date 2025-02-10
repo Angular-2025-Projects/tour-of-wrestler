@@ -1,0 +1,11 @@
+<div *ngIf="wrestler">
+    <h2> Détails {{wrestler.name | uppercase}}</h2>
+    <div><span>id: </span>{{wrestler.id}}</div>
+    <div><span>nom: </span>{{wrestler.name}}</div>
+    <div>
+        <label for="name">Nom du lutteur: </label>
+        <input id="name" [(ngModel)]="wrestler.name" placeholder="nom">
+    </div>
+</div>
+<button type="button" (click)="goBack()">Retour</button>
+<button type="button" (click)="save()">Enregistrer</button>

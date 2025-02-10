@@ -1,0 +1,8 @@
+<h2>Top Lutteurs</h2>
+<div class="wrestlers-menu">
+  <a *ngFor="let wrestler of wrestlers" routerLink="/detail/{{wrestler.id}}">
+    {{wrestler.name}}
+  </a>
+</div>
+
+<app-wrestler-search></app-wrestler-search>

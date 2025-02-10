@@ -1,0 +1,19 @@
+<h2>Mes Lutteurs</h2>
+<div>
+    <label for="new-wrestler">Nom du lutteur: </label>
+    <input id="new-wrestler" #wrestlerName />
+  
+    <!-- (click) transmet la valeur d'entrée à add() puis efface l'entrée -->
+    <button type="button" class="add-button" (click)="add(wrestlerName.value); wrestlerName.value=''">
+      Ajouter un lutteur
+    </button>
+</div>
+<ul class="wrestlers">
+  <li *ngFor="let wrestler of wrestlers">
+    <a routerLink="/detail/{{wrestler.id}}">
+        <span class="badge">{{wrestler.id}}</span> {{wrestler.name}}
+    </a>
+    <button type="button" class="delete" title="supprimer un lutteur"
+    (click)="delete(wrestler)">x</button>
+  </li>
+</ul>
